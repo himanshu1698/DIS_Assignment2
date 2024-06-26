@@ -1,47 +1,310 @@
-/**
-Sample css code
-*/
-/* Set height to 100% for body and html to enable the background image to cover the whole page: */
-body,
-html {
-  height: 100%;
+/* General styles */
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-/*Set background image*/
-.container {
-  background-image: url('https://doc-10-ao-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/r085o9ungppbiokopob2sfbekae4uqbb/1537920000000/14802840322886517493/*/110cT8sl-pOiHGgj9yToPkAqAzrr-RNfb');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
 }
 
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  color: beige;
-  top: 70%;
-  left: 39%;
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
   text-align: center;
-  font-size: 25px;
 }
 
-/*Set circle in unordered list*/
-.middle ul {
-  list-style-type: circle;
+header h1 {
+  margin-bottom: 1rem;
 }
 
-/*Set text inside li tag to left*/
-.middle ul li {
-  text-align: left !important;
+nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-/*Set text color for a tag inside middle class and ul>li element*/
-.middle ul li a {
-  color: beige;
+nav ul li {
+  display: inline;
+  margin: 0 10px;
 }
 
-/*Change text color and decoration for a tags inside middle class and ul>li element*/
-.middle ul li a:hover {
-  color: red;
+nav ul li a {
+  color: #fff;
   text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: #444;
+  border-radius: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+#featured-destinations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+#featured-destinations, #popular-activities, #travel-guides, #vacation-tips, #customer-reviews, #faqs {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#featured-destinations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.destination {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.destination:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.destination img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#vacation-tips, #customer-reviews {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#vacation-tips h2, #customer-reviews h2 {
+  margin-bottom: 10px;
+}
+
+#vacation-tips ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+#vacation-tips li {
+  margin-bottom: 10px;
+}
+
+#customer-reviews article {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+#customer-reviews h3 {
+  margin-bottom: 5px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CRUD page styles */
+#vacation-form {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#vacation-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#vacation-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#vacation-form button {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#vacation-form button:hover {
+  background-color: #005bb5;
+}
+
+#vacation-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#vacation-list th, #vacation-list td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#vacation-list th {
+  background-color: #f2f2f2;
+}
+
+#vacation-list td button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#vacation-list td button.edit {
+  background-color: #28a745;
+  color: white;
+}
+
+#vacation-list td button.edit:hover {
+  background-color: #218838;
+}
+
+#vacation-list td button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+#vacation-list td button.delete:hover {
+  background-color: #c82333;
+}
+
+/* Analytics page styles */
+#analytics {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer styles */
+footer {
+  background-color: #005bb5;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: text-decoration 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #featured-destinations {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .destination {
+      width: 80%;
+  }
+
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+
+  #vacation-list table, #vacation-list th, #vacation-list td {
+      display: block;
+      width: 100%;
+  }
+
+  #vacation-list th, #vacation-list td {
+      text-align: right;
+      padding-left: 50%;
+  }
+
+  #vacation-list th::before, #vacation-list td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      white-space: nowrap;
+  }
+
+  #vacation-list th {
+      background-color: transparent;
+  }
 }
